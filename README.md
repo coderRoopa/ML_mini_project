@@ -22,11 +22,10 @@ machine learning methods"* using the Kaggle **Heart Attack Analysis & Prediction
 ## Repository structure
 ```
 heart-risk-prediction/
-├── README.md
 ├── main.py                     # CLI: runs the full pipeline  (python main.py [--fast])
 ├── predict.py                  # CLI: score new patients with the saved model
 ├── data/
-│   └── README.md               # where to put heart.csv (the CSV itself is git-ignored)
+│   └── heart.csv               
 ├── notebooks/
 │   └── heart_risk_analysis.ipynb   # thin notebook: calls src/, shows tables and figures
 ├── src/
