@@ -1,6 +1,5 @@
 # Heart-Disease Risk Prediction: Rigorous Re-implementation of Shi, Bechler & Ho
-**
-PES1UG24CS386 Roopa Sreedhar A**
+**PES1UG24CS386 Roopa Sreedhar A**
 
 Re-implementation and extension of *"Predicting myocardial infarction risk using supervised and unsupervised
 machine learning methods"* using the Kaggle **Heart Attack Analysis & Prediction Dataset** (303 patients, 13 features).
