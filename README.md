@@ -1,4 +1,6 @@
 # Heart-Disease Risk Prediction: Rigorous Re-implementation of Shi, Bechler & Ho
+**
+PES1UG24CS386 Roopa Sreedhar A**
 
 Re-implementation and extension of *"Predicting myocardial infarction risk using supervised and unsupervised
 machine learning methods"* using the Kaggle **Heart Attack Analysis & Prediction Dataset** (303 patients, 13 features).
@@ -22,7 +24,6 @@ machine learning methods"* using the Kaggle **Heart Attack Analysis & Prediction
 ```
 heart-risk-prediction/
 ├── README.md
-├── requirements.txt
 ├── main.py                     # CLI: runs the full pipeline  (python main.py [--fast])
 ├── predict.py                  # CLI: score new patients with the saved model
 ├── data/
@@ -52,11 +53,11 @@ heart-risk-prediction/
 
 ## Setup
 ```bash
-git clone <your-private-repo-url> && cd heart-risk-prediction
+git clone https://github.com/coderRoopa/ML_mini_project && cd heart-risk-prediction
 python -m venv .venv && source .venv/bin/activate        # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
 ```
-Download `heart.csv` from Kaggle and place it in `data/` (see `data/README.md`).
+
 
 ## Run
 ```bash
@@ -76,7 +77,7 @@ python predict.py --input new_patients.csv [--output scored.csv]
 The CSV needs the 13 feature columns. Output: probability of heart disease and a flag at the screening threshold.
 
 ### On Kaggle
-Upload this repo folder as a Kaggle *Dataset* (e.g. `heart-risk-repo`), add it and the heart dataset as Inputs, then in a
+Upload this repo folder as a Kaggle *Dataset* , add it and the heart dataset as Inputs, then in a
 notebook cell run `!python /kaggle/input/heart-risk-repo/main.py` (add `--fast` to test). Results land in `/kaggle/working/outputs`.
 To use the notebook instead, change the first lines of its setup cell to
 `sys.path.insert(0, "/kaggle/input/heart-risk-repo")`.
@@ -97,20 +98,10 @@ To use the notebook instead, change the first lines of its setup cell to
 ## Reproducibility
 Fixed seed (`--seed`), pinned search spaces in `src/models.py`, all preprocessing inside pipelines, all numbers produced by code.
 
-## Git workflow (for the individual-contribution grade)
-Work on feature branches (`feature/calibration`, `feature/fairness`, ...), commit often with clear messages, merge via pull requests,
-and keep each member's work visible in `git log`. Share the private repo with the faculty and TAs.
-
 ## Limitations
 Single-centre, about 300 patients, no external validation; outcome is angiographic disease rather than documented MI;
 subgroup (female, n of about 96) estimates have wide CIs. Not a medical device.
 
-## Team contributions
-| Member | Contribution |
-|---|---|
-| _Name 1_ | _e.g., data cleaning, nested CV (`data.py`, `evaluation.py`)_ |
-| _Name 2_ | _e.g., calibration, fairness (`calibration.py`, `fairness.py`)_ |
-| _Name 3_ | _e.g., clustering, interpretability, write-up_ |
 
 ## References
 Shi K., Bechler K., Ho V. *Predicting myocardial infarction risk using supervised and unsupervised machine learning methods.*
