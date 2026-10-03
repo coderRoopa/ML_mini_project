@@ -1,0 +1,4 @@
+metric,male - female,95% CI,CI excludes 0?
+AUROC,-0.051,"[-0.12, 0.03]",no
+Sensitivity,0.081,"[-0.05, 0.23]",no
+Specificity,-0.208,"[-0.35, -0.07]",YES

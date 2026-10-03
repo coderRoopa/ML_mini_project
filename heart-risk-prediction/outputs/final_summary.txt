@@ -1,0 +1,16 @@
+
+PAPER (single 60/20/20 split, test n ~ 61): LogReg AUROC 0.86-0.87, recall 0.94; SVM-RBF collapsed (AUROC 0.50); clustering ARI 0.02-0.06.
+
+THIS WORK (nested repeated CV, 15 outer folds, mean ± std; label FLIPPED (risk = 1 - output)):
+  Best by mean AUROC: RandomForest (0.916); simplest within 1 corrected SE: LogReg (0.911)
+  Models significantly worse than the best (Holm p < 0.05): none -> model differences are within noise
+  Final model LogReg: AUROC 0.911 ± 0.040 | recall 0.777 ± 0.094 | F1 0.819 ± 0.056
+  Majority baseline accuracy: 0.543 ± 0.006; SVM-RBF AUROC (pipelined+tuned): 0.908 ± 0.042 (paper: 0.50)
+  Single-split LogReg AUROC ranged 0.82-0.98 over 200 seeds -> one split is unreliable.
+  Calibration: Brier raw 0.122 -> recalibrated 0.121; slope 1.12 -> 1.14.
+  Operating point (target sensitivity 0.95):
+      @0.50          : sens 0.775 / spec 0.884
+      naive thr 0.19  : sens 0.964 / spec 0.567   (optimistic)
+      nested thr (median 0.21): sens 0.942 / spec 0.591   (honest)
+  Sex gap in sensitivity (male - female): 0.081 [-0.05, 0.23]; CI excludes 0: no
+  Clustering: paper config ARI raw 0.02 vs scaled 0.30; silhouette-selected (2 PCs, k=2) ARI 0.30.
